@@ -165,4 +165,3 @@ for (let key in appData) {
 // john.__proto__ = soldier;
 // console.log(john);
 // console.log(john.armor);
-
