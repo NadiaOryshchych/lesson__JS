@@ -10,6 +10,10 @@ let list = document.getElementsByTagName('ul'),
 list[0].appendChild(items[1]);
 list[0].appendChild(items[2]);
 
+// let list = document.querySelector('.menu'),
+//    items = document.querySelectorAll('.menu .menu-item');
+// list.insertBefore(items[2], items[1]);
+
 item.classList.add('menu-item');
 item.innerHTML = 'Пятый пункт';
 list[0].appendChild(item);
