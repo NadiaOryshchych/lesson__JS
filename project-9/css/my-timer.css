@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Charmonman:700');
+body {
+   background-image: url(../img/1.jpg);
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+.block {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 0 50px;
+   font-size: 200px;
+   font-family: 'Charmonman', sans-serif;
+   color: #92ADD1;
+   border-radius: 10px;
+   box-shadow: 0 0 10px #7BA0D1,
+               0 0 30px #4970A2,
+               0 0 60px #485D7A;
+}
