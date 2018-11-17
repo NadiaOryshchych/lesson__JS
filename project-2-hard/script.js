@@ -4,12 +4,12 @@ let week = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 for (let i = 0; i < 7; i++) {
       if (i === 5 || i === 6) {
-           document.write('<div style="font-weight: bold">' + week[i] + '</div>');
+           document.body.innerHTML += '<b>' + week[i] + '</b><br>';
            console.log('holiday');
-      } else if (i === 0) {
-           document.write('<div style="font-style: italic">' + week[i] + '</div>');
+      } else if (i === 4) {
+           document.body.innerHTML += '<i>' + week[i] + '</i><br>';
       } else {
-           document.write('<div>' + week[i] + '</div>');
+           document.body.innerHTML += week[i] + '<br>';
       }
 }
 
