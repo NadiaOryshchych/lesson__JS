@@ -1,6 +1,6 @@
 'use strict';
 
-var appData = {
+let appData = {
    money: +prompt('Какой ваш бюджет на месяц?', '500'),
    time: prompt('Введите дату в формате YYYY-MM-DD', '2018-10-08'),
    expenses: {},
