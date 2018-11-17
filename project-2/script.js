@@ -13,13 +13,12 @@ for (let i = 0; i < 2; i++) {
    let unit = prompt('Введите обязательную статью расходов в этом месяце?', ''),
       cost = prompt('Во сколько обойдется?', '');
       
-   if (typeof(unit) === 'string' && typeof(unit) != null && 
-         typeof (cost) != null && unit != '' && cost != '' && 
-         unit.length < 50) {
+   if (typeof(unit) === 'string' && unit != null && cost != null && unit != '' && 
+            cost != '' && !isNaN(cost) && unit.length < 50) {
             console.log('Done!');         
             appData.expenses[unit] = cost;
    } else {
-      console.log('noup');
+      console.log('nope');
       i--;
    }
 };
