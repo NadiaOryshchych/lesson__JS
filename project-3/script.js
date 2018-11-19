@@ -25,13 +25,12 @@ function chooseExpense() {
             let unit = prompt('Введите обязательную статью расходов в этом месяце?', 'палка'),
                   cost = +prompt('Во сколько обойдется?', '23');
 
-            if (typeof (unit) === 'string' && typeof (unit) != null &&
-                  typeof (cost) != null && unit != '' && cost != '' &&
-                  unit.length < 50) {
+            if (typeof (unit) === 'string' && unit != null && cost != null && unit != '' &&
+                  cost != '' && !isNaN(cost) && unit.length < 50) {
                   console.log('Done!');
                   appData.expenses[unit] = cost;
             } else {
-                  console.log('noup');
+                  console.log('nope');
                   i--;
             }
       }
@@ -70,9 +69,9 @@ checkSavings();
 
 function chooseOptExpenses() {
       for (let i = 1; i <= 3; i++) {
-            let nonUnit = prompt('Статья необязательных расходов?', 'палка');
+            let nonUnit = prompt('Статья необязательных расходов?', '');
 
-            if (typeof (nonUnit) === 'string' && typeof (nonUnit) != null &&
+            if (typeof (nonUnit) === 'string' && nonUnit != null &&
                   nonUnit != '' && nonUnit.length < 50) {
                   console.log('Done!');
                   appData.optionalExpenses[i] = nonUnit;
