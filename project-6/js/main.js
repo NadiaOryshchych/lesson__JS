@@ -6,7 +6,7 @@ let mainBtn = document.getElementById('start'),
 
    itemsBtn = document.querySelectorAll('.data > button'),
 
-   optionalexpensesItem = document.querySelectorAll('.optionalexpenses-item'),
+   optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
 
    chooseIncome = document.querySelector('#income'),
    savings = document.querySelector('#savings'),
@@ -15,49 +15,26 @@ let mainBtn = document.getElementById('start'),
    year = document.querySelector('.year-value'),
    month = document.querySelector('.month-value'),
    day = document.querySelector('.day-value');
-
-// console.log(mainBtn);
-
-// console.log(itemsValue);
-// for (let y = 0; y < itemsValue.length; y++) {
-//    if (y % 2 !== 0) {
-//       console.log(itemsValue[y]);
-//    } 
-// }
-
-// console.log(itemsBtn);
-// for (let i = 0; i < itemsBtn.length; i++) {
-//    console.log(itemsBtn[i]);
-// }
-
-// console.log(expensesItem);
-
-// console.log(optionalexpensesItem);
-
-// console.log(chooseIncome);
-// console.log(savings);
-// console.log(chooseSum);
-// console.log(choosePercent);
-// console.log(year);
-// console.log(month);
-// console.log(day);
-
 let money, time;
 
 // itemsBtn[0].classList.add('disable');
 // itemsBtn[1].classList.add('disable');
 // itemsBtn[2].classList.add('disable');
-itemsBtn[0].setAttribute('disabled', 'disabled');
-itemsBtn[1].setAttribute('disabled', 'disabled');
-itemsBtn[2].setAttribute('disabled', 'disabled');
+
+itemsBtn.forEach(function (item) {
+   item.setAttribute('disabled', 'disabled');
+});
+// itemsBtn[0].setAttribute('disabled', 'disabled');
+// itemsBtn[1].setAttribute('disabled', 'disabled');
+// itemsBtn[2].setAttribute('disabled', 'disabled');
 
 // document.querySelectorAll('.expenses-item').disable = true;
 
 mainBtn.addEventListener('click', function() {
-   time = prompt('Введите дату в формате YYYY-MM-DD', '2018-10-08');
+   time = prompt('Введите дату в формате YYYY-MM-DD', '2018-11-26');
    money = +prompt('Какой ваш бюджет на месяц?', '70000');
    while (isNaN(money) || money == ' ' || money == null) {
-      money = +prompt('Какой ваш бюджет на месяц?', '500');
+      money = +prompt('Какой ваш бюджет на месяц?', '50000');
    }
    appData.budget = money;
    appData.timeData = time;
@@ -71,9 +48,12 @@ mainBtn.addEventListener('click', function() {
 //    itemsBtn[1].classList.remove('disable');
 //    itemsBtn[2].classList.remove('disable');
 
-    itemsBtn[0].removeAttribute('disabled');
-    itemsBtn[1].removeAttribute('disabled');
-    itemsBtn[2].removeAttribute('disabled');   
+   itemsBtn.forEach(function (item) {
+      item.removeAttribute('disabled');
+   });
+   //  itemsBtn[0].removeAttribute('disabled');
+   //  itemsBtn[1].removeAttribute('disabled');
+   //  itemsBtn[2].removeAttribute('disabled');   
 });
 
 itemsBtn[0].addEventListener('click', function () {
@@ -82,9 +62,8 @@ itemsBtn[0].addEventListener('click', function () {
       let unit = expensesItem[i].value,
           cost = expensesItem[++i].value;
 
-      if (typeof(unit) === 'string' && typeof (unit) != null &&
-         typeof (cost) != null && unit != '' && cost != '' &&
-         unit.length < 50) {
+      if (typeof(unit) === 'string' && unit != null &&
+         cost != null && unit != '' && cost != '' && unit.length < 50) {
          console.log('Done!');
          appData.expenses[unit] = cost;
          sum += +cost;
@@ -98,10 +77,10 @@ itemsBtn[0].addEventListener('click', function () {
 });
 
 itemsBtn[1].addEventListener('click', function () {
-   for (let i = 1; i <= optionalexpensesItem.length; i++) {
-      let nonUnit = optionalexpensesItem[i].value;
+   for (let i = 0; i <= optionalExpensesItem.length; i++) {
+      let nonUnit = optionalExpensesItem[i].value;
 
-      if (typeof (nonUnit) === 'string' && typeof (nonUnit) != null &&
+      if (typeof (nonUnit) === 'string' && nonUnit != null &&
          nonUnit != '' && nonUnit.length < 50) {
          console.log('Done!');
          appData.optionalExpenses[i] = nonUnit;
@@ -116,7 +95,7 @@ itemsBtn[1].addEventListener('click', function () {
 itemsBtn[2].addEventListener('click', function () {
 
    if (appData.budget != undefined) {
-      appData.moneyPerDay = ((appData.budget - itemsValue[7]) / 30).toFixed(2);
+      appData.moneyPerDay = ((appData.budget - itemsValue[7].innerText) / 30).toFixed(2);
       itemsValue[3].textContent = appData.moneyPerDay;
 
       if (appData.moneyPerDay < 100) {
@@ -126,7 +105,7 @@ itemsBtn[2].addEventListener('click', function () {
       } else if (appData.moneyPerDay > 2000) {
          itemsValue[5].textContent = 'Высокий уровень достатка';
       } else {
-         console.log('Error');
+         itemsValue[5].textContent = 'Где-то ошибка!';
       }
    } else {
       itemsValue[3].textContent = 'Введите ваш доход';
@@ -138,14 +117,14 @@ chooseIncome.addEventListener('input', function () {
    let items = chooseIncome.value;
    appData.income = items.split(', ');
 
-   itemsValue[9].textContent = appData.income;
+   itemsValue[11].textContent = appData.income;
 });
 
 savings.addEventListener('click', function () {
    if (appData.savings == true) {
-      appData.savings == false;
+      appData.savings = false;
    } else {
-      appData.savings == true;
+      appData.savings = true;
    }
 });
 
