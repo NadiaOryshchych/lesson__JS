@@ -29,3 +29,11 @@ col[1].removeChild(dash[1]);
 ansPlace.textContent = ans;
 
 
+
+// let div = document.createElement('div'),
+//    text = document.createTextNode('I am here');
+
+// document.body.innerHTML += text;
+// console.log(text);
+
+

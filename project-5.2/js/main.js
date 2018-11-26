@@ -6,7 +6,7 @@ let mainBtn = document.getElementById('start'),
 
    itemsBtn = document.querySelectorAll('.data > button'),
 
-   optionalexpensesItem = document.querySelectorAll('.optionalexpenses'),
+   optionalexpensesItem = document.querySelectorAll('.optionalexpenses-item'),
 
    chooseIncome = document.querySelector('#income'),
    savings = document.querySelector('#checkbox'),
