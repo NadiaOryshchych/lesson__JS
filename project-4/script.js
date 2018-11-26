@@ -5,7 +5,7 @@ let money, time;
 function start() {
       money = +prompt('Какой ваш бюджет на месяц?', '500');
       while(isNaN(money) || money == ' ' || money == null ) {
-            money = +prompt('Какой ваш бюджет на месяц?', '500');
+            money = +prompt('Какой ваш бюджет на месяц?', '50000');
       }
       time = prompt('Введите дату в формате YYYY-MM-DD', '2018-10-08');
 }
@@ -83,9 +83,9 @@ var appData = {
             alert('Что-то вы ввели не так, как надо, начните сначала');
             this.chooseIncome();
          }
-
+         document.body.innerHTML += 'Способы дополнительного заработка:' + '<br>';
          appData.income.forEach(function(item, i) {
-             document.write(i+1 + ': ' + item + '<br>');
+            document.body.innerHTML += i + 1 + ': ' + item + '<br>';
          });
    }
 };
