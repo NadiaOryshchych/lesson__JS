@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
+
+    // Tabs
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
@@ -34,8 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     // Timer
-
-    let deadline = '2018-11-01';
+    let deadline = '2018-12-01';
 
     function getTimeRemaiming(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
