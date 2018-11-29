@@ -10,8 +10,8 @@ window.addEventListener('DOMContentLoaded', function() {
             tabContent[i].classList.add('hide');
         }
     }
-
     hideTabContent(1);
+    // почему мы пишет тут единицу, если первый элемент - это нулевой элемент должен быть.. как бы первый элемент массива
 
     function showabContent(b) {
         if (tabContent[b].classList.contains('hide')) {

@@ -77,7 +77,8 @@ itemsBtn[0].addEventListener('click', function () {
 });
 
 itemsBtn[1].addEventListener('click', function () {
-   for (let i = 0; i <= optionalExpensesItem.length; i++) {
+   itemsValue[9].textContent = '';
+   for (let i = 0; i < optionalExpensesItem.length; i++) {
       let nonUnit = optionalExpensesItem[i].value;
 
       if (typeof (nonUnit) === 'string' && nonUnit != null &&
@@ -88,7 +89,11 @@ itemsBtn[1].addEventListener('click', function () {
          console.log('noup');
          i--;
       }
-      itemsValue[9].textContent += appData.optionalExpenses[i] + ', ';
+      if (i < optionalExpensesItem.length-1) {
+         itemsValue[9].textContent += appData.optionalExpenses[i] + ', ';
+      } else {
+         itemsValue[9].textContent += appData.optionalExpenses[i];
+      }
    }
 });
 
@@ -206,41 +211,3 @@ btn[0].onclick = function() {
 // btn[0].addEventListener('mouseenter', function() {
 //    alert('Вы навели на первую кнопку');
 // })
-
-
-/* ".
-Установите для свойства element disabled значение false:
-
-document.getElementById('my-input-id').disabled = false;
-Если вы используете jQuery, эквивалент будет выглядеть следующим образом:
-
-$('#my-input-id').prop('disabled', false);
-Для нескольких полей ввода вы можете получить к ним доступ по классу:
-
-var inputs = document.getElementsByClassName('my-input-class');
-for (var i = 0; i < inputs.length; i++) {
-    inputs[i].disabled = false;
-}
-Где document можно заменить формой, например, чтобы найти только элементы внутри этой формы.Вы также можете использовать getElementsByTagName('input') для получения всех элементов ввода.В вашей итерации for вам нужно будет проверить, что inputs[i].type == 'text'.
-
-104
-ответ дан David Hedlund 30 июля '12 в 13:50 источникподелиться
-Почему бы просто не удалить этот атрибут ?
-
-    vanilla JS: elem.removeAttribute('disabled')
-jQuery: elem.removeAttr('disabled')
-13
-ответ дан Dragos Rusu 31 марта '15 в 16:40 источникподелиться
-Чтобы установить disabled в false, используя свойство name для ввода:
-
-document.myForm.myInputName.disabled = false;
-2
-ответ дан Henry Hedden 08 июня '13 в 16:19 источникподелиться
-method 1 < input type = "text" onclick = "this.disabled=false;" disabled >
-    <hr>
-        method 2 <input type="text" onclick="this.removeAttribute('disabled');" disabled>
-            <hr>
-                method 3 <input type="text" onclick="this.removeAttribute('readonly');" readonly>
-                    код предыдущих ответов, похоже, не работает в встроенном режиме, но существует обходной путь: метод 3.
-                    
-см. демонстрацию https://jsfiddle.net/eliz82/xqzccdfg/ */
