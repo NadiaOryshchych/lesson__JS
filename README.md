@@ -9,3 +9,4 @@
 Урок 5.2 - https://nadiaoryshchych.github.io/lesson__JS/project-5.2 <br>
 Урок 6 - https://nadiaoryshchych.github.io/lesson__JS/project-6 <br>
 Урок 7 - https://nadiaoryshchych.github.io/lesson__JS/project-7 <br>
+Урок 8 - https://nadiaoryshchych.github.io/lesson__JS/project-8 <br>
