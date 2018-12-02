@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     'use strict';
+
+    // Tabs
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
@@ -35,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer
 
-    let deadline = '2018-11-01';
+    let deadline = '2018-12-12';
 
     function getTimeRemaiming(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -104,6 +106,8 @@ window.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         });
     }
+    // но было бы ещё проще, если бы "узнать подробнее"
+    // можно просто бы добавить класс more
 
     more.addEventListener('click', function() {
         overlay.style.display = 'block';
