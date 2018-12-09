@@ -260,11 +260,11 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    persons.addEventListener('change', function () {
+    persons.addEventListener('input', function () {
         personsSum = +this.value;
         total = (daysSum + personsSum)*4000;
 
-        if (restDays.value == '') {
+        if (restDays.value == ''|| restDays.value == 0 || persons.value == 0) {
             totalValue.innerHTML = 0;
         } else {
             totalValue.innerHTML = total;
@@ -274,14 +274,14 @@ window.addEventListener('DOMContentLoaded', function() {
         daysSum = +this.value;
         total = (daysSum + personsSum) * 4000;
 
-        if (persons.value == '') {
+        if (persons.value == '' || restDays.value == 0 || persons.value == 0) {
             totalValue.innerHTML = 0;
         } else {
             totalValue.innerHTML = total;
         }
     });
-    place.addEventListener('input', function() {
-        if (restDays.value == '' || persons.value == '' || restDays.value === 0 || persons.value === 0) {
+    place.addEventListener('change', function() {
+        if (restDays.value == '' || persons.value == '') {
             totalValue.innerHTML = 0;
         } else {
             let a = total;
