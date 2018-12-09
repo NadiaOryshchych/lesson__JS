@@ -15,3 +15,4 @@
 Урок 11 - https://nadiaoryshchych.github.io/lesson__JS/project-11 <br>
 Урок 12 - https://nadiaoryshchych.github.io/lesson__JS/project-12 <br>
 Урок 13 - https://nadiaoryshchych.github.io/lesson__JS/project-13 <br>
+Урок 14 - https://nadiaoryshchych.github.io/lesson__JS/project-14 <br>
