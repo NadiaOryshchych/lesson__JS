@@ -12,6 +12,6 @@
 Урок 8 - https://nadiaoryshchych.github.io/lesson__JS/project-8 <br>
 Урок 9 - https://nadiaoryshchych.github.io/lesson__JS/project-9 <br>
 Урок 10 - https://nadiaoryshchych.github.io/lesson__JS/project-10 <br>
-Урок 11 - 
-Урок 12 - 
-Урок 13 - 
+Урок 11 - https://nadiaoryshchych.github.io/lesson__JS/project-11 <br>
+Урок 12 - https://nadiaoryshchych.github.io/lesson__JS/project-12 <br>
+Урок 13 - https://nadiaoryshchych.github.io/lesson__JS/project-13 <br>
